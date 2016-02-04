@@ -6,6 +6,7 @@ class python::params {
   $version                = 'system'
   $pip                    = true
   $dev                    = false
+  $package_name           = 'python'
   $virtualenv             = false
   $gunicorn               = false
   $manage_gunicorn        = true

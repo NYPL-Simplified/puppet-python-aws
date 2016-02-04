@@ -30,7 +30,7 @@ class python::install {
   if $::python::version =~ /^3/ {
     $pip = 'python3-pip'
   } else {
-    $pip = 'python27-pip'
+    $pip = "$package_name-pip"
   }
 
   $dev_ensure = $python::dev ? {
@@ -56,7 +56,7 @@ class python::install {
       package { "python==${python::version}": ensure => latest, provider => pip }
     }
     default: {
-      package { 'python27-virtualenv': ensure => $venv_ensure }
+      package { "$package_name-virtualenv": ensure => $venv_ensure }
       package { $pip: ensure => $pip_ensure }
       package { $pythondev: ensure => $dev_ensure }
       package { $python: ensure => present }
