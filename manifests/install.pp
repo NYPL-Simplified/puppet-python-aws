@@ -15,7 +15,7 @@
 
 class python::install(
 
-  $package_name           = 'python'
+  $package_name  = hiera('python::package_name')
 
 ){
 
