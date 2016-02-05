@@ -13,7 +13,11 @@
 # Fotis Gimian
 #
 
-class python::install {
+class python::install(
+
+  $package_name           = 'python'
+
+){
 
   $python = $::python::version ? {
     'system' => 'python',
